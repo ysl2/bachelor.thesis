@@ -1,0 +1,65 @@
+[蒙特卡洛树搜索入门介绍](https://blog.csdn.net/dQCFKyQDXYm3F8rB0/article/details/79767024)
+
+五子棋规则
+Free-style Gomoku规则：无禁手，长连算胜
+Standard Gomoku规则：无禁手，长连不算胜也不算负
+Gomoku-Pro规则：黑方在天元放第一子，白方下第二子，黑方在中央5×5区域外放第三子，此后按Standard Gomoku规则继续进行。
+Gomoku-Swap规则：假先方在棋盘任意下三手（二黑一白）假后方有二种选择：选黑/选白，此后按Standard Gomoku规则继续进行。
+Gomoku-Swap2规则（目前Gomoku世锦赛的使用规则）：假先方在棋盘任意下三手（二黑一白）假后方有三种选择：选黑/选白/下四、五两手（一黑一白）再假先方选择黑或白，此后按Standard Gomoku规则继续进行。
+Renju规则：黑棋禁手，白棋无禁手，黑棋禁手包括“三三”(包括“四三三”)、“四四”(包括“四四三”)、“长连”，即黑棋只能以“四三”取胜。五连与禁手同时形成时，判胜。四四禁手可能发生在一条直线上，三三不会
+
+[五子棋AI比赛网站，有比赛接口(Java,C++)](https://gomocup.org/)
+规则说明：https://www.beichengjiu.com/computerscience/338499.html
+freestyle: 20*20，无禁手，长连算赢
+standard: 15*15，无禁手，长连不算赢也不算输
+renju（连珠）: 15*15，黑棋有禁手
+
+连珠与五子棋网站
+http://www.renju.net/
+
+五子棋评分表算法
+https://www.cnblogs.com/chaiwenjun000/p/5321115.html
+https://wenku.baidu.com/view/84db8debe2bd960590c677fb.html
+https://wenku.baidu.com/view/5a270a0979563c1ec5da71a5.html
+https://www.cnblogs.com/maxuewei2/p/4825520.html
+https://blog.csdn.net/lihongxun945/article/details/50625267
+
+2005硕士论文-计算机五子棋博奕系统的研究与实现
+https://www.docin.com/p-1402613865.html
+
+28 天自制你的 AlphaGo(五):蒙特卡洛树搜索(MCTS)基础
+	——关于博弈论、蒙特卡洛搜索方法、AlphaGO的分析介绍
+https://www.cnblogs.com/yifdu25/p/8303462.html
+那么博弈论中，我们把zero-sum、perfect information、deterministic、discrete、sequential的游戏统称为Combinatorial Game，例如围棋、象棋等，而MCTS只能解决Combinatorial Game的问题。
+黑盒优化的算法也有很多，例如进化算法、贝叶斯优化、MCTS也算是，而这些算法都需要解决如何权衡探索和利用（Exploration and Exploitation）的问题。
+Minimax 搜索还有许多后续发展，如Alpha-beta 剪枝，以及更进一步的 Null Window / NegaScout / MTD(f) 等等。可惜这些方法更适合象棋等棋类，对于围棋的意义不大（除非已经接近终局）
+参见“Alpha-Beta搜索的诸多变种”
+http://www.xqbase.com/computer/advanced_intro2.htm
+
+UCT（信心上限树）算法
+https://blog.csdn.net/u014397729/article/details/27366363
+
+2019-04，自制AlphoGo，基于深度增强学习和蒙特卡洛树搜索的五子棋AI
+http://www.360doc.com/content/19/0409/09/16619343_827380677.shtml
+
+2018-03，AlphaZero实战：从零学下五子棋（附代码）
+https://zhuanlan.zhihu.com/p/32089487
+
+AlphoZero版五子棋实现
+https://ne7ermore.github.io/post/alpha-zero/
+
+
+蒙塔卡罗-五子棋，Java代码
+https://blog.csdn.net/bowean/article/details/79971547
+https://blog.csdn.net/liaogaobo2008/article/details/95033895
+
+
+相关参考文献
+2017-多种搜索算法的五子棋博弈算法研究
+https://www.doc88.com/p-4092876895959.html
+2012-A Survey of Monte Carlo Tree Search Method
+中文翻译：https://blog.csdn.net/bowean/article/details/78808584
+
+2018-Mastering the Game of Gomoku without Human Knowledge
+2018-AlphaGomoku: An AlphaGo-based Gomoku Artificial Intelligence using Curriculum Learning
+2014-Evolving Gomoku solver by genetic algorithm

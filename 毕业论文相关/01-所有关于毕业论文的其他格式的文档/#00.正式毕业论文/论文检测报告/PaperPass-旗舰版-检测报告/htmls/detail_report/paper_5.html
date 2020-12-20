@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>PaperPass 最权威论文抄袭检测系统</title>
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
+</head>
+<body>
+<div>
+    <div class="text-center PT30">
+        <ul class="pagination"><li><a href="paper_1.html"><span>首页</span></a></li>
+    <li><a href="paper_4.html"><span>上一页</span></a></li>
+    <li><a href="paper_6.html"><span>下一页</span></a></li>
+    <li><a href="paper_7.html"><span>尾页</span></a></li></ul>
+    <div class="ML15 inline-block v-top MT10">
+            页码
+            <span class="g-font-color green">5</span>/<span>7</span>
+            页
+        </div>        <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm addLine" style="margin-left: 45px;">使用辅助线</button>
+    </div>
+    <div class="paper-txt P30 PB0">
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="174">174</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">四、五子棋程序实现</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="175">175</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">（一）Monte Carlo Tree Search算法的伪代码实现</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="176">176</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">1．状态的预定义与MCTS基本步骤</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="177">177</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">首先定义出判断局面的基本单位：</span> <span class="g-font-color green">Action类，用于表示一个坐标或者一个动作。</span> <span class="g-font-color green">由于动作是最小单位，为了保证数据安全，将横坐标x与纵坐标y定义成无法修改。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="178">178</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">class Action { public final int x;</span> <span class="g-font-color green">//横坐标 public final int y;</span> <span class="g-font-color green">//纵坐标 public Action(int x， int y) {//Action类的初始化方法初始化x的值;</span> <span class="g-font-color green">初始化y的值;</span> <span class="g-font-color green"> }}</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="179">179</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">还需要将当前棋盘board与当前玩家player包装成一个局面。</span> <span class="g-font-color green">为了防止棋盘状态被误更改，需要针对传入的棋盘深拷贝，以确保产生的新棋盘的局面与原棋盘相同，但是地址不同。</span> <span class="g-font-color green">最后用State类来描述：</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="180">180</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">class State { public int[][] board;</span> <span class="g-font-color green">//一个棋盘，用二维数组表示 public int player//当前回合下的玩家 public State( int[][] board，</span> <span class="g-font-color green"> int player){// State类的初始化方法深拷贝当前棋盘状态;</span> <span class="g-font-color green"> 初始化当前玩家;</span> <span class="g-font-color green"> }}</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="181">181</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">由于算法会针对博弈树进行操作，因此需要定义博弈树的节点结构Node类。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="182">182</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/423.html' target='right' class='g-font-color orange'>一个节点应由当前的局面（state）和父节点产生，并包含所有可能的子节点。</a> <span class="g-font-color green">对于一个节点用untriedAction属性来描述所有的可供选择的下一步集合。</span> <span class="g-font-color green">由于可供选择的下一步个数是不固定的，且每当产生一个子节点，相应的动作应从“可供选择的下一步”中删除，</span> <span class="g-font-color green">因此应使用链表结构。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="183">183</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">为了最后能够找到节点相对应的动作，每一个子节点都需要和相应的动作绑定。</span> <span class="g-font-color green">并且在查找子节点的过程中，我们并不要求顺序一致，而是更关心查找的速度，因此应采用底层为哈希表的键值对映射结构 HashMap，</span> <span class="g-font-color green">并通过 Action= Node的键值方式映射。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="184">184</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">每一个节点都需要记录模拟奖励与访问次数。</span> <span class="g-font-color green">由于节点分为玩家的回合与电脑的回合，我们将其设置为针对电脑方计算奖励。</span> <span class="g-font-color green">如果当前回合是电脑，且电脑胜利，加1分。</span> <span class="g-font-color green">如果当前回合是人类，且人类胜利，减1分。</span> <span class="g-font-color green">其他情况类同，在后述的bestChild()方法中进行分类。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="185">185</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">class Node { public State state;</span> <span class="g-font-color green">//当前局面 public Node parent;</span> <span class="g-font-color green">//父节点 public HashMap[Action， Node] children = new HashMap[Action， Node]();</span> <span class="g-font-color green">//针对子节点键值对集合，定义一个空的映射。</span> <span class="g-font-color green"> public LinkedList[Action] untriedActions;</span> <span class="g-font-color green">//可供选择的行动集合 public int Q_FOR_COMPUTER = 0;</span> <span class="g-font-color green">//当前节点的模拟奖励（对于电脑方）public int N = 0;</span> <span class="g-font-color green">//当前节点的访问次数 public Node(State state， Node parent) {//Node类的初始化方法this.state = state;</span> <span class="g-font-color green">this.parent = parent;</span> <span class="g-font-color green">//如果当前节点是根节点，此值为null this.untriedActions = this.state.getUntriedActions();</span> <span class="g-font-color green"> }}</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="186">186</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">由于可供选择的下一步集合是由当前局面产生，因此在state类中补充方法getUntriedActions()用于通过一个棋盘获得所有可供选择的动作集合：</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="187">187</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">State:</span> <span class="g-font-color green">//通过一个棋盘获得所有可供选择的动作集合public LinkedList[Action] getUntriedActions() { 定义一个空链表untriedActions;</span> <span class="g-font-color green"> for(遍历棋盘获得每个坐标) { if (当前坐标没有棋) { 根据当前棋盘的x与y产生一个Action;</span> <span class="g-font-color green"> 在链表untriedActions中添加此Action;</span> <span class="g-font-color green"> } } 打乱列表顺序;</span> <span class="g-font-color green">//保证可选择的行动集是无序随机的 return untriedActions;</span> <span class="g-font-color green">}</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="188">188</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/454.html' target='right' class='g-font-color orange'>采用自顶向下的代码编写方式，定义MCTS类，用于算法步骤。</a>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="189">189</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">class MCTS { public MCTS() {//MCTS类的初始化方法 }}</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="190">190</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">MCTS类中，需要定义一个主方法UCTSearch()。</span> <span class="g-font-color green">此方法的作用是，按照MCTS算法的步骤，通过传入一个棋盘与当前下棋方完成搜索操作，并最终返回一个坐标Action，用于电脑方判断落子位置。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="191">191</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">MCTS:</span> <span class="g-font-color green">//主方法public Action UCTSearch (int[][] board，int player) { 通过传入的棋盘board与玩家player，产生一个局面state;</span> <span class="g-font-color green"> 通过局面state产生根节点Node;</span> <span class="g-font-color green"> //算法搜索步骤：</span> <span class="g-font-color green"> for (只要算力在允许的范围内) { Node node = treePolicy(root);</span> <span class="g-font-color green">//选择与扩展，找出一个值得进行模拟的节点 int winner = node.rollout();</span> <span class="g-font-color green">//模拟此节点，返回一个确定的游戏结果 node.backup(winner);</span> <span class="g-font-color green">//反向传播模拟结果 } Action action = root.bestChild(0.0).getKey();</span> <span class="g-font-color green">//选择胜率最大的子节点对应的动作 return action}</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="192">192</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">2．选择与扩展：</span> <span class="g-font-color green">treePolicy()方法</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="193">193</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">上述MCTS算法的基本步骤中，选择与模拟通过treePolicy()完成。</span><a href='../sentence_detail/470.html' target='right' class='g-font-color orange'>如果一个节点是终端节点，将直接返回。</a> <span class="g-font-color green">如果不是终端节点，且已经完全展开，将从所有子节点中选择一个节点继续上述判断，</span> <span class="g-font-color green">直到来到一个未完全展开的节点，通过探索此未完全展开的节点，得到一个新的节点。</span> <span class="g-font-color green">在代码表示中，C_Param是一个超参数，用于权衡胜率与探索的比例。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="194">194</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">MCTS:</span> <span class="g-font-color green">//用于选择与扩展的方法public Node treePolicy(Node node) { while (!</span> <span class="g-font-color green">node.isTerminalNode()) {//如果节点不是终端节点 if (!</span> <span class="g-font-color green">node.isFullyExpanded()) {//如果子节点没有完全展开 return node.expand();</span> <span class="g-font-color green">//对此节点进行探索，得到一个新的值得模拟的节点} else{//</span> <span class="g-font-color green">如果子节点已经完全展开 node= node. bestChild( C_ Param). getValue()</span> <span class="g-font-color green">;</span> <span class="g-font-color green">//从子节点中挑选一个最优节点 } } return node;</span> <span class="g-font-color green">}</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="195">195</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">在此方法中，存在一些未定义的方法，因此优先将它们定义：</span> <span class="g-font-color green">isTerminalNode()，isFullyExpanded()，expand()，bestChild()。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="196">196</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">Node类中的isTerminal()方法：</span><a href='../sentence_detail/486.html' target='right' class='g-font-color orange'>用于判断一个节点是否是终端节点。</a><a href='../sentence_detail/487.html' target='right' class='g-font-color orange'>如果一个节点的游戏状态已经确定，则说明是终端节点。</a> <span class="g-font-color green">由于游戏状态与 State类有关，为了保证类的功能明确，让 state类中的 isOver()方法检查游戏状态，</span> <span class="g-font-color green">并将当前游戏状态返回给 isTerminalNode()方法，由 isTerminalNode()方法判断游戏是否结束。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="197">197</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">Node:</span> <span class="g-font-color green">//用于判断是否是终端节点 public boolean isTermanalNode(){//根据 State类提供的游戏状态，</span> <span class="g-font-color green">判断当前节点是否是终端节点 return this. state. isOver()== NOT_ WIN;</span> <span class="g-font-color green">}</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="198">198</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">在State类中相应定义isOver()方法，判断游戏状态：</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="199">199</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">State:</span> <span class="g-font-color green">//判断游戏状态：</span> <span class="g-font-color green"> HUMAN_ WIN， COMPUTER_ WIN， ALL_ FILLED， NOT_ WINpublic int isOver(){ for(遍历棋盘)</span> <span class="g-font-color green">{ for(从四个方向判断){ if(某一方向存在五子连珠){ return当前位置的颜色;</span> <span class="g-font-color green"> } } }if (棋盘下满了) {return ALL_FILLED;</span> <span class="g-font-color green">//此值表示棋盘全部下满} return NOT_WIN;</span> <span class="g-font-color green">//没有获取到任何结束状态，说明棋局未定}</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+            </div>
+    <div class="text-center PB30">
+        <ul class="pagination"><li><a href="paper_1.html"><span>首页</span></a></li>
+    <li><a href="paper_4.html"><span>上一页</span></a></li>
+    <li><a href="paper_6.html"><span>下一页</span></a></li>
+    <li><a href="paper_7.html"><span>尾页</span></a></li></ul>
+    <div class="ML15 inline-block v-top MT10">
+            页码
+            <span class="g-font-color green">5</span>/<span>7</span>
+            页
+        </div>    </div>
+        <div style="text-align: center;padding-top:30px">
+        <a href="http://www.paperpass.com" target="_blank"><img src="http://file.paperpass.com/images/fabiao.jpg"/></a></div>
+        <div class="paper-footer">
+        <p>检测报告由<a href="http://www.paperpass.com/" target="_blank">PaperPass</a>文献相似度检测系统生成</p>
+        <p>Copyright © 2007-2020 PaperPass</p>
+    </div>
+</div>
+</body>
+<script type="text/html" template="section">
+    <div class="text-right">
+        <div class="modifyTxt-notice">
+            修改完本段落之后，点击“临时保存”，之后可在上方导航“修改文档”页面中查看修改后的内容
+        </div>
+        <textarea class="form-control resize-none" rows="4" tpl-section="textarea"></textarea>
+        <div class="button-wrap MT10">
+            <button type="button" class="g-btn g-btn-default g-btn-sm red" tpl-section-cancle="btn">取消保存</button>
+            <button type="button" class="g-btn g-btn-default g-btn-sm" tpl-section-save="btn">临时保存</button>
+        </div>
+    </div>
+</script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/Lib.js"></script>
+<script type="text/javascript">
+    Report.report_id = '5e897517bed3dk4aq';
+</script>
+<script type="text/javascript">
+    (function(System,$){
+        var sectionEdit = System.Paper.sectionEdit();
+        var sectionSave = System.Paper.sectionSave(null);
+        $(function(){
+            $(document).on('click','[tpl-section=btn]',function(){
+                sectionEdit.call(this);
+            });
+            $(document).on('click','[tpl-section-save=btn]',function(){
+                sectionSave.call(this);
+
+            });
+            $(document).on('click','[tpl-section-cancle=btn]',function(){
+                var $warp = $(this).closest('[tpl-section="warp"]');
+                $warp.find('[tpl-section="box"]').html('');
+            });
+        });
+    })(Report,jQuery)
+</script>
+</html>

@@ -1,0 +1,1 @@
+把这个jar包覆盖到eclipse/plugin下，替换原有的同名jar包即可

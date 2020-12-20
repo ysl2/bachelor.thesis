@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>PaperPass 最权威论文抄袭检测系统</title>
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
+</head>
+<body>
+<div>
+    <div class="text-center PT30">
+        <ul class="pagination"><li><a href="paper_1.html"><span>首页</span></a></li>
+    <li><a href="paper_2.html"><span>上一页</span></a></li>
+    <li><a href="paper_4.html"><span>下一页</span></a></li>
+    <li><a href="paper_7.html"><span>尾页</span></a></li></ul>
+    <div class="ML15 inline-block v-top MT10">
+            页码
+            <span class="g-font-color green">3</span>/<span>7</span>
+            页
+        </div>        <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm addLine" style="margin-left: 45px;">使用辅助线</button>
+    </div>
+    <div class="paper-txt P30 PB0">
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="90">90</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">在1975年，由 Knuth和 Moore在 MiniMax算法的基础上提出了负极大值（ Negamax）算法，</span><a href='../sentence_detail/199.html' target='right' class='g-font-color orange'>即每次遍历完成后，都将估值取负值向上带回，这样做与极小极大算法的结果是一样的，</a> <span class="g-font-color green">但是简化了代码，并且消除了两方的差别。</span> <span class="g-font-color green">但此算法要求估值函数能够通过正负值反映出是哪一方在下棋。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="91">91</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">上述无论是极小极大算法还是负极大值算法，窗口都是负无穷到正无穷，这种做法是将窗口不断缩小，直到缩到正确的值上。</span> <span class="g-font-color green">而另一种做法是事先划定一个小窗口，采用alpha - beta剪枝，如果不在窗口内，就扩大窗口重新搜索，这个思路是渴望搜索（Aspiration Search）。</span> <span class="g-font-color green">如果更极端一点，将窗口无限小，那么算法搜索开始时必定无法落在窗口中，需要进一步扩大窗口，最终的结果是窗口恰好满足搜索需求。</span> <span class="g-font-color green">基于这种思路，Judea Pearl与Alexander Reinefeld研究出极小窗口搜索（Minimal Window Search，又称PVS搜索或NegaScout搜索）。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="92">92</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">除了对于搜索算法的优化，还有针对开局或残局大量数据的开局库或残局库、针对</span><a href='../sentence_detail/207.html' target='right' class='g-font-color orange'>重复数据的置换表与针对 alpha- beta的剪枝顺序的历史启发等更多优化方式。</a>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="93">93</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">(3)MiniMax算法与权值法的异同点</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="94">94</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">相比于权值法，MiniMax算法通过构建博弈树并深度遍历树节点的方式，解决了权值法的局部最优问题，使计算机具备了人类的预测走法功能。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="95">95</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">但MiniMax算法需要依赖于特定的棋类知识。</span> <span class="g-font-color green">其中的估值函数虽然模式固定，但是直接影响到程序判断走法的优劣性。</span> <span class="g-font-color green">因此在绝大多数程序都使用了相同的优化手法的前提下，估值函数成为了评判一个程序的最重要的指标。</span> <span class="g-font-color green">并且在围棋等局面更复杂的情况下，使用MiniMax无法评判一个局面的好坏。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="96">96</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">三、Monte Carlo Tree Search算法概述</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="97">97</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/215.html' target='right' class='g-font-color orange'>蒙特卡洛树搜索（Monte Carlo Tree Search，简称MCTS）算法则是应用于树结构的一种启发式搜索算法。</a> <span class="g-font-color green">MCTS算法继承了MiniMax的博弈树概念，基于Monte Carlo类似多次随机模拟实验的方法。</span> <span class="g-font-color green">与Monte Carlo方法不同的是，由于只能在树结构中使用，因此MCTS算法的应用场景更少。</span> <span class="g-font-color green">在分析MCTS算法之前，需要对Monte Carlo方法进行说明。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="98">98</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">（一）Monte Carlo方法</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="99">99</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">Monte Carlo方法与Monte Carlo Tree Search算法在思路上有继承性，但在具体实现中不同。</span><a href='../sentence_detail/221.html' target='right' class='g-font-color red'> Monte Carlo方法实际上是一种基于随机抽样的统计学模拟方法，是二十世纪四十年代中期由于科学技术的发展和电子计算机的发明，</a><a href='../sentence_detail/222.html' target='right' class='g-font-color orange'>而被 Bruce Abramson提出的一种以概率统计理论为指导的一类数值计算方法。</a><a href='../sentence_detail/223.html' target='right' class='g-font-color orange'>这种方法旨在通过使用随机数来解决计算问题。</a>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="100">100</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/224.html' target='right' class='g-font-color orange'>比如求圆周率Π时，在正方形中随机布点。</a> <span class="g-font-color green">当布点的次数足够多时，这些点将均匀地分布在正方形范围内，这时只需计算出圆内与圆外点的个数，即可估算出Π的值：</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="101">101</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">Monte Carlo方法的意义在于，让电脑帮助人们进行多次模拟重复计算，可以解决大量手工模拟的繁琐。</span> <span class="g-font-color green">这种方法具有普适性，不仅在棋类游戏中可以使用，在数据分析时也可以使用这种多次模拟且具有随机性的实验方法。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="102">102</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">（二）Monte Carlo Tree Search算法</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="103">103</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">通过不断的模拟得到大部分节点的价值，然后下次模拟的时候根据价值有策略地选择值得利用和值得探索的节点继续模拟，</span> <span class="g-font-color green">在搜索空间巨大并且计算能力有限的情况下，这种启发式搜索能更集中地、更大概率找到一些更好的节点。</span> <span class="g-font-color green">、</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="104">104</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">1．Monte Carlo Tree Search算法基本原理</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="105">105</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">MCTS算法的步骤是：</span> <span class="g-font-color green">选择（Selecttion）与扩展（Expantion）、模拟（Simulation）、反向传播（Backpropagation）。</span> <span class="g-font-color green">选择与扩展步骤属于Tree Policy，模拟步骤属于Rollout Policy。</span> <span class="g-font-color green">在MCTS进行过程中，这些步骤会重复多次，直到算力到达极限才停止。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="106">106</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">上述步骤都是针对节点进行，而每一个节点，都至少包括两个属性和一种节点状态。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="107">107</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">两个属性：</span> <span class="g-font-color green">总模拟奖励Q，用于反映节点最终的结局。</span> <span class="g-font-color green">总访问次数N，用于反映此节点被访问的次数。</span> <span class="g-font-color green">通过UCT函数反映一个节点最终是否值得探索或被选择。</span><a href='../sentence_detail/242.html' target='right' class='g-font-color orange'>UCT值越大，节点越有价值，在选择的时候就会更被关注。</a><a href='../sentence_detail/243.html' target='right' class='g-font-color orange'>公式中第一项为胜率，第二项为探索分量。</a> <span class="g-font-color green">胜率表征当前节点在模拟中的胜利次数比例，探索分量表征此节点是否值得下一次被探索。</span> <span class="g-font-color green">胜率与探索分量之间通过参数c控制选择的偏好。</span><a href='../sentence_detail/246.html' target='right' class='g-font-color orange'>c越大，在选取的时候会越偏向未访问过的节点。</a> <span class="g-font-color green">c越小，在选取的时候会越偏向胜率高的节点。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="108">108</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">UCT函数有很多变体形式，在实际使用中，我们采用相对更合理的UCB1函数：</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="109">109</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">节点状态分为：</span><a href='../sentence_detail/250.html' target='right' class='g-font-color orange'>已访问节点、已完全展开节点、未完全展开节点、终端节点。</a>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="110">110</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">①已访问的节点：</span><a href='../sentence_detail/252.html' target='right' class='g-font-color orange'>指在MCTS搜索过程中，节点的信息被更新过。</a> <span class="g-font-color green">这个信息更新是由后述的反向传播步骤完成。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="111">111</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">②已完全展开的节点：</span><a href='../sentence_detail/255.html' target='right' class='g-font-color orange'>指当前节点下的所有子节点都至少被访问过一次。</a>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="112">112</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">③未完全展开的节点：</span><a href='../sentence_detail/257.html' target='right' class='g-font-color orange'>指当前节点仍存在没有被访问过的子节点，或者仍存在未产生的子节点。</a><a href='../sentence_detail/258.html' target='right' class='g-font-color orange'>未产生的子节点一定是未被访问的节点。</a>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="113">113</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">④终端节点（叶节点）：</span><a href='../sentence_detail/260.html' target='right' class='g-font-color orange'>指当前节点对应的局面是确定的，且无法继续下棋。</a> <span class="g-font-color green">确定的状态包括：</span> <span class="g-font-color green">电脑胜利、玩家胜利、平局。</span> <span class="g-font-color green">对于五子棋，只要棋盘上仍存在空位置，就不是终端节点。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="114">114</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">(1)选择与扩展（Tree Policy）</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="115">115</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">选择与扩展步骤的目的是：</span><a href='../sentence_detail/266.html' target='right' class='g-font-color orange'>从根节点出发，深度遍历整棵博弈树，直到获得一个值得探索的子节点。</a> <span class="g-font-color green">由于MCTS会多次进行模拟，TreePolicy也会被执行多次。</span> <span class="g-font-color green">但是每一次执行，博弈树都会产生一些新的子节点。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="116">116</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/269.html' target='right' class='g-font-color orange'>在算法进行过程中，根节点会存在以下几种状态：</a> <span class="g-font-color green"> ①MCTS开始时的根节点：</span> <span class="g-font-color green">其子节点还未产生，因此需要随机选取一个子局面作为子节点展开。</span> <span class="g-font-color green"> ②已经至少进行了一次MCTS的根节点；</span> <span class="g-font-color green"> a.根节点没有完全展开：</span> <span class="g-font-color green">虽然已经存在部分子节点，但是仍有节点没有展开。</span><a href='../sentence_detail/275.html' target='right' class='g-font-color orange'>此时应优先展开子节点，而不是在目前的已经展开的子节点中选择。</a> <span class="g-font-color green"> b.根节点已经完全展开：</span> <span class="g-font-color green">此时所有子节点都是已访问状态。</span> <span class="g-font-color green">在这种状况下，需要通过UCT函数（后叙）计算得出一个值得探索的子节点。</span> <span class="g-font-color green"> 对于一个节点的展开方法：</span> <span class="g-font-color green">查找所有子局面，并随机一个子局面生成子节点。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="117">117</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">(2)模拟(Rollout Policy)</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="118">118</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">模拟步骤的目的是评估当前节点的价值。</span> <span class="g-font-color green">作用类似于MiniMax的估值函数。</span> <span class="g-font-color green">但是模拟的评估是随机评估，如果只进行一次，结果将非常不准确，这也是MCTS需要进行多次模拟的原因。</span><a href='../sentence_detail/285.html' target='right' class='g-font-color orange'>随着执行次数增加，博弈树会变得越来越庞大，算法的可信度就越高。</a>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="119">119</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">实现模拟的步骤是对上一步产生的节点的棋盘进行随机落子，直到把整个棋盘填满，或者分出了胜负，最后返回模拟下棋的结果。</span> <span class="g-font-color green">在进行下棋之前，需要先判断一下当前节点是否是终端节点，如果是终端节点，就不进行模拟下棋，直接返回真实结果。</span> <span class="g-font-color green">此步骤体现了Monte Carlo方法的随机性。</span> <span class="g-font-color green">模拟步骤没有改变节点的定位.在模拟结束后，当前节点依然是通过TreePolicy产生的那个节点。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="120">120</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">在执行落子之前，需要重新拷贝一份当前的棋盘，否则模拟后将会对目前的棋盘产生影响，使下一次模拟结果出错。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="121">121</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">(3)反向传播</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="122">122</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                <a href='../sentence_detail/292.html' target='right' class='g-font-color orange'>反向传播的目的是将当前节点的模拟结果传达到父节点，并让父节点继续向上传播，直到传播到根节点。</a> <span class="g-font-color green">通过反向传播，根节点可以得知子节点在若干步后的情况，并根据情况判断这个子节点是否值得继续探索。</span> <span class="g-font-color green">在反向传播过程中，节点的Q值与N值会被更新，每进行一次反向传播，节点的N值就会加1。</span> <span class="g-font-color green">而Q值则反映的是模拟的输赢情况。</span> <span class="g-font-color green">如果模拟胜利方是当前节点对应的那一方，则Q加1，反之则减1。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+            </div>
+    <div class="text-center PB30">
+        <ul class="pagination"><li><a href="paper_1.html"><span>首页</span></a></li>
+    <li><a href="paper_2.html"><span>上一页</span></a></li>
+    <li><a href="paper_4.html"><span>下一页</span></a></li>
+    <li><a href="paper_7.html"><span>尾页</span></a></li></ul>
+    <div class="ML15 inline-block v-top MT10">
+            页码
+            <span class="g-font-color green">3</span>/<span>7</span>
+            页
+        </div>    </div>
+        <div style="text-align: center;padding-top:30px">
+        <a href="http://www.paperpass.com" target="_blank"><img src="http://file.paperpass.com/images/fabiao.jpg"/></a></div>
+        <div class="paper-footer">
+        <p>检测报告由<a href="http://www.paperpass.com/" target="_blank">PaperPass</a>文献相似度检测系统生成</p>
+        <p>Copyright © 2007-2020 PaperPass</p>
+    </div>
+</div>
+</body>
+<script type="text/html" template="section">
+    <div class="text-right">
+        <div class="modifyTxt-notice">
+            修改完本段落之后，点击“临时保存”，之后可在上方导航“修改文档”页面中查看修改后的内容
+        </div>
+        <textarea class="form-control resize-none" rows="4" tpl-section="textarea"></textarea>
+        <div class="button-wrap MT10">
+            <button type="button" class="g-btn g-btn-default g-btn-sm red" tpl-section-cancle="btn">取消保存</button>
+            <button type="button" class="g-btn g-btn-default g-btn-sm" tpl-section-save="btn">临时保存</button>
+        </div>
+    </div>
+</script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/Lib.js"></script>
+<script type="text/javascript">
+    Report.report_id = '5e897517bed3dk4aq';
+</script>
+<script type="text/javascript">
+    (function(System,$){
+        var sectionEdit = System.Paper.sectionEdit();
+        var sectionSave = System.Paper.sectionSave(null);
+        $(function(){
+            $(document).on('click','[tpl-section=btn]',function(){
+                sectionEdit.call(this);
+            });
+            $(document).on('click','[tpl-section-save=btn]',function(){
+                sectionSave.call(this);
+
+            });
+            $(document).on('click','[tpl-section-cancle=btn]',function(){
+                var $warp = $(this).closest('[tpl-section="warp"]');
+                $warp.find('[tpl-section="box"]').html('');
+            });
+        });
+    })(Report,jQuery)
+</script>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>PaperPass 最权威论文抄袭检测系统</title>
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
+</head>
+<body>
+<div>
+    <div class="text-center PT30">
+        <ul class="pagination"><li><a href="paper_1.html"><span>首页</span></a></li>
+    <li><a href="paper_5.html"><span>上一页</span></a></li>
+    <li><a href="paper_7.html"><span>下一页</span></a></li>
+    <li><a href="paper_7.html"><span>尾页</span></a></li></ul>
+    <div class="ML15 inline-block v-top MT10">
+            页码
+            <span class="g-font-color green">6</span>/<span>7</span>
+            页
+        </div>        <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm addLine" style="margin-left: 45px;">使用辅助线</button>
+    </div>
+    <div class="paper-txt P30 PB0">
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="200">200</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">Node类中的isFullyExpanded()方法：</span><a href='../sentence_detail/503.html' target='right' class='g-font-color red'>判断当前节点是否已经完全展开。</a> <span class="g-font-color green">完全展开指的是所有子节点至少被访问过一次，这说明可选择的动作集合中不存在任何动作（所有动作已经生成了子节点），</span> <span class="g-font-color green">并且所有已经产生的子节点的 N值都大于0。</span> <span class="g-font-color green">在代码实现中，我们首先考虑可选择的动作集合是否仍存在动作，如果存在动作，说明存在未产生的子节点，即当前节点不是完全展开节点。</span> <span class="g-font-color green">如果不存在动作，进一步检查所有子节点的N值是否都大于0，如果存在N值为0的子节点，说明当前节点不是完全展开节点。</span> <span class="g-font-color green">只有两步检查都通过时，才说明当前节点是完全展开的。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="201">201</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">Node:</span> <span class="g-font-color green">//判断当前节点是否已经完全展开public boolean isFullyExpanded() { if (可选择的动作集合的长度 !</span> <span class="g-font-color green">= 0    子节点映射集合的长度 == 0) { return false;</span> <span class="g-font-color green"> } for (遍历子节点集合) { if (子节点的N值 == 0) { return false;</span> <span class="g-font-color green"> } } return true;</span> <span class="g-font-color green">}</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="202">202</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">Node类中的expand()方法：</span> <span class="g-font-color green">用于未完全展开节点的扩展。</span> <span class="g-font-color green">由于在 treePolicy()方法中，已经通过 isTerminalNode()和 isFullyExpanded()方法将终端节点与完全展开节点排除，</span> <span class="g-font-color green">因此如果一个节点调用了此方法，说明此节点必定是非终端节点和非完全展开节点，即此节点中的 untriedActions存在元素，</span> <span class="g-font-color green">或者是此节点的子节点中存在 N值为0的节点。</span> <span class="g-font-color green">扩展思路是优先在untriedActions中寻找满足条件的Action，如果untriedActions是空列表，再从children子节点映射中寻找。</span> <span class="g-font-color green">因此对于扩展操作，同样需要分类讨论：</span> <span class="g-font-color green">①对于 untriedActions存在元素的状况，需要选出一个 Action并创建相应的新节点，然后将 Action从 untriedActions中删掉并将 Action和新节点在子节点列表中注册，</span> <span class="g-font-color green">最终返回子节点。</span> <span class="g-font-color green">②对于untriedActions不存在元素，但是子节点中存在N值为0的节点的状况，直接返回此子节点即可。</span> <span class="g-font-color green">③对于untriedActions不存在元素，且子节点中不存在N值为0的节点的状况，将无法获取任何子节点，因此最终将返回错误的null。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="203">203</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">Node:</span> <span class="g-font-color green">public Node expand() { if (可选择的行动集的长度 !</span> <span class="g-font-color green">= 0) { 选出一个action，并在untriedActions中删除此action;</span> <span class="g-font-color green"> 根据action与调用此方法的node，得到下一步状态state;</span> <span class="g-font-color green"> 根据state与下一步玩家建立一个新的节点newChild;</span> <span class="g-font-color green"> 将action与newChild组成的键值对注册到children;</span> <span class="g-font-color green"> return newChild;</span> <span class="g-font-color green"> } else if (子节点映射children的长度 ] 0) { for (遍历children) { if (存在N值为0的子节点) { return 子节点;</span> <span class="g-font-color green"> } } } return null;</span> <span class="g-font-color green">}</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="204">204</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">Node类中的bestChild()方法：</span> <span class="g-font-color green">当所有子节点都至少被访问过一次后，无法再继续扩展，只能通过此方法得到下一步值得进行模拟的节点。</span> <span class="g-font-color green">为了能够灵活的选取键或值，此方法最终返回的是键值对对象。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="205">205</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">Node:</span> <span class="g-font-color green"> public Map.Entry[Action， Node] bestChild(double c) {for (遍历子节点映射) { 获得一个节点child;</span> <span class="g-font-color green"> 计算child的UCB值;</span> <span class="g-font-color green"> } 获得以UCB最大的子节点为值的键值对对象bestChildObject;</span> <span class="g-font-color green"> return bestChildObject;</span> <span class="g-font-color green">//返回键值对对象 }</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="206">206</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">在上述代码中，“计算child的UCB值”过程如下：</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="207">207</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">int left = child.Q_FOR_COMPUTER / child.N;</span> <span class="g-font-color green">int right = c * Math.sqrt((2 * Math.log(child.parent.N)) / child.N);</span> <span class="g-font-color green">UCB = left + right;</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="208">208</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">3．模拟：</span> <span class="g-font-color green">rollout()方法</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="209">209</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">通过treePolicy()方法得到的节点有三种可能性：</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="210">210</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">①节点是终端节点。</span> <span class="g-font-color green">对于这种情况，应在rollout中首先判断出来，不进行模拟并直接返回游戏结果。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="211">211</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">②节点是通过扩展得到的。</span> <span class="g-font-color green">由于在扩展的时候已经排除了终端节点和完全展开的节点，因此节点中必定存在未展开的子节点或者访问次数为0的子节点。</span><a href='../sentence_detail/556.html' target='right' class='g-font-color orange'>这种情况需要对当前节点进行模拟，直到模拟到游戏结束。</a> <span class="g-font-color green">为了防止在模拟时改变节点的棋盘状态，需要对节点的state属性进行深拷贝，保证得到的新棋盘与当前状态棋盘完全隔离。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="212">212</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">③节点是通过bestChild()方法计算得到的。</span> <span class="g-font-color green">由于在执行此方法之前，已经将终端节点排除，因此这种状态同样不是终端节点，需要对节点进行模拟。</span> <span class="g-font-color green">模拟方法与②相同。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="213">213</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">Node:</span> <span class="g-font-color green">//模拟public int rollout() { if (当前节点胜负已分) { return 游戏结果;</span> <span class="g-font-color green"> } State currentState = this.state.stateDeepCopy();</span> <span class="g-font-color green">//拷贝当前局面 while (胜负未分) { 通过getUntriedActions()方法获取curerntState的所有可落子位置集合;</span> <span class="g-font-color green"> 随机选出一个Action;</span> <span class="g-font-color green"> 通过Action改变currentState的棋盘状态;</span> <span class="g-font-color green"> currentState = 产生的下一个局面;</span> <span class="g-font-color green"> } return 游戏结果;</span> <span class="g-font-color green">}</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="214">214</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">4．反向传播：</span> <span class="g-font-color green">backup()方法</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="215">215</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">此方法只能更改调用者的状态，并通过递归的方式“提醒”父节点需要更改自己的状态，而不是直接改变父节点的状态。</span> <span class="g-font-color green">在传播的过程中，节点需要改变自身的Q值与N值。</span> <span class="g-font-color green">由于N值反映的是访问次数，因此每进行一次反向传播，节点的N值就会增加一次。</span> <span class="g-font-color green">但Q值是用来描述电脑方的胜算，因此需要根据当前的下棋方与模拟结果分类讨论：</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="216">216</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">Node:</span> <span class="g-font-color green">//反向传播public void backup(int winner) { this.N++;</span> <span class="g-font-color green"> if (当前回合是电脑) { if (电脑胜利) { this.Q++;</span> <span class="g-font-color green"> } else { this.Q--;</span> <span class="g-font-color green"> } } else { if (玩家胜利) { this.Q--;</span> <span class="g-font-color green"> } else { this.Q++;</span> <span class="g-font-color green"> } } if (父节点存在) { 父节点.backup(winner);</span> <span class="g-font-color green"> }}</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="217">217</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">5．选择下一走法</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="218">218</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">最终选择胜率最大的子节点。</span> <span class="g-font-color green">胜率最大意味着完全抛弃探索分量，因此最终让UCB1方法中的超参数c = 0，即可得到胜率最大的点。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="219">219</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">（二）五子棋界面的实现</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="220">220</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">目前程序分为三个类与一个接口：</span> <span class="g-font-color green">Board类、BoardConfig接口、Computer类、Main类。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="221">221</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">1.</span> <span class="g-font-color green">Board类</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+        
+        <div class="paper-section" tpl-section="warp">
+            <span class="label-warning" tpl-section="badge" data-id="222">222</span>
+            <p class="MT20 text-idt25" tpl-section="text">
+                 <span class="g-font-color green">五子棋的面板类，继承自JPanel，实现下棋功能。</span><a href='../sentence_detail/593.html' target='right' class='g-font-color orange'>此类中定义了两个成员内部类：</a> <span class="g-font-color green">按钮监控类与面板监控类，分别用于按钮的动作监听与面板的鼠标监听。</span><a href='../sentence_detail/595.html' target='right' class='g-font-color orange'>棋局的状态通过面板上一个带滑动条的文本域显示。</a> <span class="g-font-color green">此文本域默认位置为跟随光标的位置。</span> <span class="g-font-color green">此面板被JFrame包裹。</span> <span class="g-font-color green">①当棋手下一步棋时，会另开一个Computer类线程，完成电脑的判断，并通过改变面板类的二维数组，实现电脑落子。</span> <span class="g-font-color green">②判断五子棋的输赢情况。</span> <span class="g-font-color green">当存在五子相连时，程序会进行胜负判断显示在文本域上，并不再允许落子以及不允许电脑线程启动，并将胜负标记设置为true（分出胜负）。</span> <span class="g-font-color green">如果棋局未分出胜负，将不做任何处理。</span> <span class="g-font-color green">③实现重置棋盘功能。</span> <span class="g-font-color green">当点击重置棋盘按钮时，胜负标记会被重置为 false（未分胜负），存储棋子的二维数组被清空，</span> <span class="g-font-color green">先手标记会重置为先手方（先手方参数可在 BoardConfig接口设置，可选项为 BLACK或 WHITE）并且如果电脑线程已经启动，</span> <span class="g-font-color green">将会停止电脑线程。</span><a href='../sentence_detail/606.html' target='right' class='g-font-color orange'>最后清空文本域，并在文本域输出已重置信息。</a> <span class="g-font-color green">④解决落子冲突。</span> <span class="g-font-color green">当电脑进程在启动过程中，如果检测到棋手点击棋盘范围，将不产生落子动作。</span> <span class="g-font-color green">并在文本域上显示提示信息。</span>            </p>
+                        <div class="text-right">
+                <button type="button" tpl-section="btn" class="g-btn g-btn-default g-btn-sm MT10">段落修改</button>
+            </div>
+            <div tpl-section="box"></div>
+                    </div>
+            </div>
+    <div class="text-center PB30">
+        <ul class="pagination"><li><a href="paper_1.html"><span>首页</span></a></li>
+    <li><a href="paper_5.html"><span>上一页</span></a></li>
+    <li><a href="paper_7.html"><span>下一页</span></a></li>
+    <li><a href="paper_7.html"><span>尾页</span></a></li></ul>
+    <div class="ML15 inline-block v-top MT10">
+            页码
+            <span class="g-font-color green">6</span>/<span>7</span>
+            页
+        </div>    </div>
+        <div style="text-align: center;padding-top:30px">
+        <a href="http://www.paperpass.com" target="_blank"><img src="http://file.paperpass.com/images/fabiao.jpg"/></a></div>
+        <div class="paper-footer">
+        <p>检测报告由<a href="http://www.paperpass.com/" target="_blank">PaperPass</a>文献相似度检测系统生成</p>
+        <p>Copyright © 2007-2020 PaperPass</p>
+    </div>
+</div>
+</body>
+<script type="text/html" template="section">
+    <div class="text-right">
+        <div class="modifyTxt-notice">
+            修改完本段落之后，点击“临时保存”，之后可在上方导航“修改文档”页面中查看修改后的内容
+        </div>
+        <textarea class="form-control resize-none" rows="4" tpl-section="textarea"></textarea>
+        <div class="button-wrap MT10">
+            <button type="button" class="g-btn g-btn-default g-btn-sm red" tpl-section-cancle="btn">取消保存</button>
+            <button type="button" class="g-btn g-btn-default g-btn-sm" tpl-section-save="btn">临时保存</button>
+        </div>
+    </div>
+</script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/Lib.js"></script>
+<script type="text/javascript">
+    Report.report_id = '5e897517bed3dk4aq';
+</script>
+<script type="text/javascript">
+    (function(System,$){
+        var sectionEdit = System.Paper.sectionEdit();
+        var sectionSave = System.Paper.sectionSave(null);
+        $(function(){
+            $(document).on('click','[tpl-section=btn]',function(){
+                sectionEdit.call(this);
+            });
+            $(document).on('click','[tpl-section-save=btn]',function(){
+                sectionSave.call(this);
+
+            });
+            $(document).on('click','[tpl-section-cancle=btn]',function(){
+                var $warp = $(this).closest('[tpl-section="warp"]');
+                $warp.find('[tpl-section="box"]').html('');
+            });
+        });
+    })(Report,jQuery)
+</script>
+</html>

@@ -1,0 +1,9 @@
+//org.eclipse.ui.commands/state/org.eclipse.ui.navigator.resources.nested.changeProjectPresentation/org.eclipse.ui.commands.radioState=false
+ColorsAndFontsPreferencePage.expandedCategories=Torg.eclipse.debug.ui.presentation\tTorg.eclipse.jdt.ui.presentation
+ColorsAndFontsPreferencePage.selectedElement=Forg.eclipse.debug.ui.consoleFont
+PLUGINS_NOT_ACTIVATED_ON_STARTUP=;org.eclipse.m2e.discovery;
+eclipse.preferences.version=1
+org.eclipse.debug.ui.consoleFont=1|Courier New|13.915966|1|WINDOWS|1|-23|0|0|0|700|0|0|0|0|3|2|1|49|Courier New;
+org.eclipse.jdt.internal.ui.compare.JavaMergeViewer=1|Courier New|13.915966|1|WINDOWS|1|-23|0|0|0|700|0|0|0|0|3|2|1|49|Courier New;
+org.eclipse.jdt.ui.editors.textfont=1|Courier New|13.915966|1|WINDOWS|1|-23|0|0|0|700|0|0|0|0|3|2|1|49|Courier New;
+org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<org.eclipse.ui.commands>\r\n<keyBinding contextId\="org.eclipse.ui.contexts.dialogAndWindow" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="CTRL+SPACE"/>\r\n<keyBinding commandId\="org.eclipse.ui.edit.text.contentAssist.proposals" contextId\="org.eclipse.ui.contexts.dialogAndWindow" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="ALT+/"/>\r\n</org.eclipse.ui.commands>
