@@ -19,8 +19,6 @@
 
 ## Notice
 
-<u>**程序有bug**</u>
-
 欢迎提issue或发起PR :-)
 
 ## License
