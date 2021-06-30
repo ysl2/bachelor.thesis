@@ -55,9 +55,9 @@ public interface BoardConfig {
     public static final Color BOARD_COLOR = new Color(158, 198, 255);                               //棋盘的颜色
     //蒙特卡洛算法相关：
         //迭代深化搜索相关：
-    public static final int INIT_CACULATE_TIMES = 35000;  //每次调用算法搜索的基础节点数
+    public static final int INIT_CACULATE_TIMES = 38000;  //每次调用算法搜索的基础节点数
     public static final int ITERATIVE_DEEPENING_COUNT = 500;   //迭代加深常量，每迭代一次加这些搜索次数。0表示不启用迭代加深。不启用的时候默认按照最大搜索次数
-    public static final int MAX_CACULATE_TIMES = 45000;     //最大搜索数。到了此值之后不会再增加搜索次数。
+    public static final int MAX_CACULATE_TIMES = 55000;     //最大搜索数。到了此值之后不会再增加搜索次数。
         //UCT相关：
     public static final double C_Param = 1 / Math.sqrt(2);   //这是UCT函数里面那个常量值
     public static final double Q_WIN_REWARD = 1;    //电脑模拟赢了的奖励
