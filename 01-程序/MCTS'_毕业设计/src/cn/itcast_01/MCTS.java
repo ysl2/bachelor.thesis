@@ -93,19 +93,39 @@ public class MCTS implements BoardConfig {
 
     // quick fix
     public static Action fixBug(int[][] chessArray) {
-        // 电脑 四
+        Action tempResult = fixBugFour(chessArray, COMPUTER_COLOR);
+        if (tempResult.x != -1) {
+            return tempResult;
+        }
+        tempResult = fixBugFour(chessArray, HUMAN_COLOR);
+        if (tempResult.x != -1) {
+            return tempResult;
+        }
+        tempResult = fixBugThree(chessArray, COMPUTER_COLOR);
+        if (tempResult.x != -1) {
+            return tempResult;
+        }
+        tempResult = fixBugThree(chessArray, HUMAN_COLOR);
+        if (tempResult.x != -1) {
+            return tempResult;
+        }
+        return new Action(-1, -1);
+    }
+
+    // 四
+    public static Action fixBugFour(int[][] chessArray, int color) {
         for (int i = 0; i < chessArray.length; i++) {
             for (int j = 0; j < chessArray[i].length; j++) {
-                // 如果当前位置是玩家的，或者没有棋，就直接略过。
-                if (chessArray[i][j] == HUMAN_COLOR || chessArray[i][j] == NOCHESS) {
+                // 如果当前位置是另一方的，或者没有棋，就直接略过。
+                if (chessArray[i][j] == ((color == COMPUTER_COLOR)? HUMAN_COLOR : COMPUTER_COLOR) || chessArray[i][j] == NOCHESS) {
                     continue;
                 }
                 // 判断上斜向四
                 if (i - 3 > 0 && j + 3 < chessArray.length &&
-                        chessArray[i][j] == COMPUTER_COLOR &&
-                        chessArray[i - 1][j + 1] == COMPUTER_COLOR &&
-                        chessArray[i - 2][j + 2] == COMPUTER_COLOR &&
-                        chessArray[i - 3][j + 3] == COMPUTER_COLOR) {
+                        chessArray[i][j] == color &&
+                        chessArray[i - 1][j + 1] == color &&
+                        chessArray[i - 2][j + 2] == color &&
+                        chessArray[i - 3][j + 3] == color) {
                     if (i + 1 < chessArray.length && j - 1 >= 0 && chessArray[i + 1][j - 1] == NOCHESS) {
                         Action tempResult = new Action(i + 1, j - 1);
                         return tempResult;
@@ -117,10 +137,10 @@ public class MCTS implements BoardConfig {
                 }
                 // 判断下斜向四
                 if (i + 3 < chessArray.length && j + 3 < chessArray.length &&
-                        chessArray[i][j] == COMPUTER_COLOR &&
-                        chessArray[i + 1][j + 1] == COMPUTER_COLOR &&
-                        chessArray[i + 2][j + 2] == COMPUTER_COLOR &&
-                        chessArray[i + 3][j + 3] == COMPUTER_COLOR) {
+                        chessArray[i][j] == color &&
+                        chessArray[i + 1][j + 1] == color &&
+                        chessArray[i + 2][j + 2] == color &&
+                        chessArray[i + 3][j + 3] == color) {
                     if (i - 1 >= 0 && j - 1 >= 0 && chessArray[i - 1][j - 1] == NOCHESS) {
                         Action tempResult = new Action(i - 1, j - 1);
                         return tempResult;
@@ -132,10 +152,10 @@ public class MCTS implements BoardConfig {
                 }
                 // 判断横向四
                 if (j - 1 >= 0 && j + 3 < chessArray.length &&
-                        chessArray[i][j] == COMPUTER_COLOR &&
-                        chessArray[i][j + 1] == COMPUTER_COLOR &&
-                        chessArray[i][j + 2] == COMPUTER_COLOR &&
-                        chessArray[i][j + 3] == COMPUTER_COLOR) {
+                        chessArray[i][j] == color &&
+                        chessArray[i][j + 1] == color &&
+                        chessArray[i][j + 2] == color &&
+                        chessArray[i][j + 3] == color) {
                     if (chessArray[i][j - 1] == NOCHESS) {
                         Action tempResult = new Action(i, j - 1);
                         return tempResult;
@@ -147,10 +167,10 @@ public class MCTS implements BoardConfig {
                 }
                 // 判断纵向四
                 if (i - 1 >= 0 && i + 3 < chessArray.length &&
-                        chessArray[i][j] == COMPUTER_COLOR &&
-                        chessArray[i + 1][j] == COMPUTER_COLOR &&
-                        chessArray[i + 2][j] == COMPUTER_COLOR &&
-                        chessArray[i + 3][j] == COMPUTER_COLOR) {
+                        chessArray[i][j] == color &&
+                        chessArray[i + 1][j] == color &&
+                        chessArray[i + 2][j] == color &&
+                        chessArray[i + 3][j] == color) {
                     if (chessArray[i - 1][j] == NOCHESS) {
                         Action tempResult = new Action(i - 1, j);
                         return tempResult;
@@ -162,90 +182,24 @@ public class MCTS implements BoardConfig {
                 }
             }
         }
+        return new Action(-1, -1);
+    }
 
-        // 玩家 四
+
+    // 活三
+    public static Action fixBugThree(int[][] chessArray, int color) {
         for (int i = 0; i < chessArray.length; i++) {
             for (int j = 0; j < chessArray[i].length; j++) {
-                // 如果当前位置是电脑的，或者没有棋，就直接略过。
-                if (chessArray[i][j] == COMPUTER_COLOR || chessArray[i][j] == NOCHESS) {
-                    continue;
-                }
-                // 判断上斜向四
-                if (i - 3 > 0 && j + 3 < chessArray.length &&
-                        chessArray[i][j] == HUMAN_COLOR &&
-                        chessArray[i - 1][j + 1] == HUMAN_COLOR &&
-                        chessArray[i - 2][j + 2] == HUMAN_COLOR &&
-                        chessArray[i - 3][j + 3] == HUMAN_COLOR) {
-                    if (i + 1 < chessArray.length && j - 1 >= 0 && chessArray[i + 1][j - 1] == NOCHESS) {
-                        Action tempResult = new Action(i + 1, j - 1);
-                        return tempResult;
-                    }
-                    if (i - 4 >= 0 && j + 4 < chessArray.length && chessArray[i - 4][j + 4] == NOCHESS) {
-                        Action tempResult = new Action(i - 4, j + 4);
-                        return tempResult;
-                    }
-                }
-                // 判断下斜向四
-                if (i + 3 < chessArray.length && j + 3 < chessArray.length &&
-                        chessArray[i][j] == HUMAN_COLOR &&
-                        chessArray[i + 1][j + 1] == HUMAN_COLOR &&
-                        chessArray[i + 2][j + 2] == HUMAN_COLOR &&
-                        chessArray[i + 3][j + 3] == HUMAN_COLOR) {
-                    if (i - 1 >= 0 && j - 1 >= 0 && chessArray[i - 1][j - 1] == NOCHESS) {
-                        Action tempResult = new Action(i - 1, j - 1);
-                        return tempResult;
-                    }
-                    if (i + 4 < chessArray.length && j + 4 < chessArray.length && chessArray[i + 4][j + 4] == NOCHESS) {
-                        Action tempResult = new Action(i + 4, j + 4);
-                        return tempResult;
-                    }
-                }
-                // 判断横向四
-                if (j - 1 >= 0 && j + 3 < chessArray.length &&
-                        chessArray[i][j] == HUMAN_COLOR &&
-                        chessArray[i][j + 1] == HUMAN_COLOR &&
-                        chessArray[i][j + 2] == HUMAN_COLOR &&
-                        chessArray[i][j + 3] == HUMAN_COLOR) {
-                    if (chessArray[i][j - 1] == NOCHESS) {
-                        Action tempResult = new Action(i, j - 1);
-                        return tempResult;
-                    }
-                    if (j + 4 < chessArray.length && chessArray[i][j + 4] == NOCHESS) {
-                        Action tempResult = new Action(i, j + 4);
-                        return tempResult;
-                    }
-                }
-                // 判断纵向四
-                if (i - 1 >= 0 && i + 3 < chessArray.length &&
-                        chessArray[i][j] == HUMAN_COLOR &&
-                        chessArray[i + 1][j] == HUMAN_COLOR &&
-                        chessArray[i + 2][j] == HUMAN_COLOR &&
-                        chessArray[i + 3][j] == HUMAN_COLOR) {
-                    if (chessArray[i - 1][j] == NOCHESS) {
-                        Action tempResult = new Action(i - 1, j);
-                        return tempResult;
-                    }
-                    if (i + 4 < chessArray.length && chessArray[i + 4][j] == NOCHESS) {
-                        Action tempResult = new Action(i + 4, j);
-                        return tempResult;
-                    }
-                }
-            }
-        }
-
-        // 电脑 活三
-        for (int i = 0; i < chessArray.length; i++) {
-            for (int j = 0; j < chessArray[i].length; j++) {
-                // 如果当前位置是玩家的，或者没有棋，就直接略过。
-                if (chessArray[i][j] == HUMAN_COLOR || chessArray[i][j] == NOCHESS) {
+                // 如果当前位置是另一方的，或者没有棋，就直接略过。
+                if (chessArray[i][j] == ((color == HUMAN_COLOR)? COMPUTER_COLOR : HUMAN_COLOR) || chessArray[i][j] == NOCHESS) {
                     continue;
                 }
                 // 判断上斜向活三
                 if (i + 1 < chessArray.length && i - 3 >= 0 && j - 1 >= 0 && j + 3 < chessArray.length &&
                         chessArray[i + 1][j - 1] == NOCHESS &&
-                        chessArray[i][j] == COMPUTER_COLOR &&
-                        chessArray[i - 1][j + 1] == COMPUTER_COLOR &&
-                        chessArray[i - 2][j + 2] == COMPUTER_COLOR &&
+                        chessArray[i][j] == color &&
+                        chessArray[i - 1][j + 1] == color &&
+                        chessArray[i - 2][j + 2] == color &&
                         chessArray[i - 3][j + 3] == NOCHESS) {
                     Action tempResult = new Action(i + 1, j - 1);
                     return tempResult;
@@ -253,9 +207,9 @@ public class MCTS implements BoardConfig {
                 // 判断下斜向活三
                 if (i - 1 >= 0 && j - 1 >= 0 && i + 3 < chessArray.length && j + 3 < chessArray.length &&
                         chessArray[i - 1][j - 1] == NOCHESS &&
-                        chessArray[i][j] == COMPUTER_COLOR &&
-                        chessArray[i + 1][j + 1] == COMPUTER_COLOR &&
-                        chessArray[i + 2][j + 2] == COMPUTER_COLOR &&
+                        chessArray[i][j] == color &&
+                        chessArray[i + 1][j + 1] == color &&
+                        chessArray[i + 2][j + 2] == color &&
                         chessArray[i + 3][j + 3] == NOCHESS) {
                     Action tempResult = new Action(i - 1, j - 1);
                     return tempResult;
@@ -263,9 +217,9 @@ public class MCTS implements BoardConfig {
                 // 判断横向活三
                 if (j - 1 >= 0 && j + 3 < chessArray.length &&
                         chessArray[i][j - 1] == NOCHESS &&
-                        chessArray[i][j] == COMPUTER_COLOR &&
-                        chessArray[i][j + 1] == COMPUTER_COLOR &&
-                        chessArray[i][j + 2] == COMPUTER_COLOR &&
+                        chessArray[i][j] == color &&
+                        chessArray[i][j + 1] == color &&
+                        chessArray[i][j + 2] == color &&
                         chessArray[i][j + 3] == NOCHESS) {
                     Action tempResult = new Action(i, j - 1);
                     return tempResult;
@@ -273,60 +227,100 @@ public class MCTS implements BoardConfig {
                 // 判断纵向活三
                 if (i - 1 >= 0 && i + 3 < chessArray.length &&
                         chessArray[i - 1][j] == NOCHESS &&
-                        chessArray[i][j] == COMPUTER_COLOR &&
-                        chessArray[i + 1][j] == COMPUTER_COLOR &&
-                        chessArray[i + 2][j] == COMPUTER_COLOR &&
+                        chessArray[i][j] == color &&
+                        chessArray[i + 1][j] == color &&
+                        chessArray[i + 2][j] == color &&
                         chessArray[i + 3][j] == NOCHESS) {
                     Action tempResult = new Action(i - 1, j);
                     return tempResult;
                 }
-            }
-        }
-
-        // 玩家 活三
-        for (int i = 0; i < chessArray.length; i++) {
-            for (int j = 0; j < chessArray[i].length; j++) {
-                // 如果当前位置是电脑的，或者没有棋，就直接略过。
-                if (chessArray[i][j] == COMPUTER_COLOR || chessArray[i][j] == NOCHESS) {
-                    continue;
-                }
-                // 判断上斜向活三
-                if (i + 1 < chessArray.length && i - 3 >= 0 && j - 1 >= 0 && j + 3 < chessArray.length &&
-                        chessArray[i + 1][j - 1] == NOCHESS &&
-                        chessArray[i][j] == HUMAN_COLOR &&
-                        chessArray[i - 1][j + 1] == HUMAN_COLOR &&
-                        chessArray[i - 2][j + 2] == HUMAN_COLOR &&
+                //------------------------------------------------------------
+                // 判断分离式上斜向活三 1类
+                if (i + 2 < chessArray.length && i - 3 >= 0 && j - 2 >= 0 && j + 3 < chessArray.length &&
+                        chessArray[i + 2][j - 2] == NOCHESS &&
+                        chessArray[i + 1][j - 1] == color &&
+                        chessArray[i][j] == color &&
+                        chessArray[i - 1][j + 1] == NOCHESS &&
+                        chessArray[i - 2][j + 2] == color &&
                         chessArray[i - 3][j + 3] == NOCHESS) {
+                    Action tempResult = new Action(i - 1, j + 1);
+                    return tempResult;
+                }
+                // 判断分离式下斜向活三 1类
+                if (i - 2 >= 0 && j - 2 >= 0 && i + 3 < chessArray.length && j + 3 < chessArray.length &&
+                        chessArray[i - 2][j - 2] == NOCHESS &&
+                        chessArray[i - 1][j - 1] == color &&
+                        chessArray[i][j] == color &&
+                        chessArray[i + 1][j + 1] == NOCHESS &&
+                        chessArray[i + 2][j + 2] == color &&
+                        chessArray[i + 3][j + 3] == NOCHESS) {
+                    Action tempResult = new Action(i + 1, j + 1);
+                    return tempResult;
+                }
+                // 判断分离式横向活三 1类
+                if (j - 2 >= 0 && j + 3 < chessArray.length &&
+                        chessArray[i][j - 2] == NOCHESS &&
+                        chessArray[i][j - 1] == color &&
+                        chessArray[i][j] == color &&
+                        chessArray[i][j + 1] == NOCHESS &&
+                        chessArray[i][j + 2] == color &&
+                        chessArray[i][j + 3] == NOCHESS) {
+                    Action tempResult = new Action(i, j + 1);
+                    return tempResult;
+                }
+                // 判断分离式纵向活三 1类
+                if (i - 2 >= 0 && i + 3 < chessArray.length &&
+                        chessArray[i - 2][j] == NOCHESS &&
+                        chessArray[i - 1][j] == color &&
+                        chessArray[i][j] == color &&
+                        chessArray[i + 1][j] == NOCHESS &&
+                        chessArray[i + 2][j] == color &&
+                        chessArray[i + 3][j] == NOCHESS) {
+                    Action tempResult = new Action(i + 1, j);
+                    return tempResult;
+                }
+                //-----------------------------------------------------------------
+                // 判断分离式下斜向活三 2类
+                if (i + 3 < chessArray.length && i - 2 >= 0 && j - 3 >= 0 && j + 2 < chessArray.length &&
+                        chessArray[i - 2][j + 2] == NOCHESS &&
+                        chessArray[i - 1][j + 1] == color &&
+                        chessArray[i][j] == color &&
+                        chessArray[i + 1][j - 1] == NOCHESS &&
+                        chessArray[i + 2][j - 2] == color &&
+                        chessArray[i + 3][j - 3] == NOCHESS) {
                     Action tempResult = new Action(i + 1, j - 1);
                     return tempResult;
                 }
-                // 判断下斜向活三
-                if (i - 1 >= 0 && j - 1 >= 0 && i + 3 < chessArray.length && j + 3 < chessArray.length &&
+                // 判断分离式上斜向活三 2类
+                if (i - 3 >= 0 && j - 3 >= 0 && i + 2 < chessArray.length && j + 2 < chessArray.length &&
+                        chessArray[i + 2][j + 2] == NOCHESS &&
+                        chessArray[i + 1][j + 1] == color &&
+                        chessArray[i][j] == color &&
                         chessArray[i - 1][j - 1] == NOCHESS &&
-                        chessArray[i][j] == HUMAN_COLOR &&
-                        chessArray[i + 1][j + 1] == HUMAN_COLOR &&
-                        chessArray[i + 2][j + 2] == HUMAN_COLOR &&
-                        chessArray[i + 3][j + 3] == NOCHESS) {
+                        chessArray[i - 2][j - 2] == color &&
+                        chessArray[i - 3][j - 3] == NOCHESS) {
                     Action tempResult = new Action(i - 1, j - 1);
                     return tempResult;
                 }
-                // 判断横向活三
-                if (j - 1 >= 0 && j + 3 < chessArray.length &&
+                // 判断分离式横向活三 2类
+                if (j - 3 >= 0 && j + 2 < chessArray.length &&
+                        chessArray[i][j + 2] == NOCHESS &&
+                        chessArray[i][j + 1] == color &&
+                        chessArray[i][j] == color &&
                         chessArray[i][j - 1] == NOCHESS &&
-                        chessArray[i][j] == HUMAN_COLOR &&
-                        chessArray[i][j + 1] == HUMAN_COLOR &&
-                        chessArray[i][j + 2] == HUMAN_COLOR &&
-                        chessArray[i][j + 3] == NOCHESS) {
+                        chessArray[i][j - 2] == color &&
+                        chessArray[i][j - 3] == NOCHESS) {
                     Action tempResult = new Action(i, j - 1);
                     return tempResult;
                 }
-                // 判断纵向活三
-                if (i - 1 >= 0 && i + 3 < chessArray.length &&
+                // 判断分离式纵向活三 2类
+                if (i - 3 >= 0 && i + 2 < chessArray.length &&
+                        chessArray[i + 2][j] == NOCHESS &&
+                        chessArray[i + 1][j] == color &&
+                        chessArray[i][j] == color &&
                         chessArray[i - 1][j] == NOCHESS &&
-                        chessArray[i][j] == HUMAN_COLOR &&
-                        chessArray[i + 1][j] == HUMAN_COLOR &&
-                        chessArray[i + 2][j] == HUMAN_COLOR &&
-                        chessArray[i + 3][j] == NOCHESS) {
+                        chessArray[i - 2][j] == color &&
+                        chessArray[i - 3][j] == NOCHESS) {
                     Action tempResult = new Action(i - 1, j);
                     return tempResult;
                 }
@@ -334,4 +328,5 @@ public class MCTS implements BoardConfig {
         }
         return new Action(-1, -1);
     }
+
 }
